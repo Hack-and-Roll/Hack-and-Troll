@@ -4,4 +4,6 @@
     border-radius: 5%;
     flex: 1;
     max-width: 450px;
+    border-color: #E5E9F0;
+    background-color: white;
 }
