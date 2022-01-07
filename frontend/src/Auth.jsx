@@ -1,8 +1,15 @@
 import "./style/Auth.css";
 import "./style/Button.css";
 import BouncingBalls from "./components/BouncingBalls";
+import { supabase } from "./supabaseClient";
 
-function Auth() {
+function Auth(props) {
+  async function signInWithGoogle() {
+    const { user, session, error } = await supabase.auth.signIn({
+      provider: "google",
+    });
+  }
+
   return (
     <>
       <BouncingBalls/>
@@ -12,6 +19,7 @@ function Auth() {
           <button
             class="button"
             style={{ "background-color": "#DB4437", color: "white" }}
+            onClick={signInWithGoogle}
           >
             Google
           </button>
