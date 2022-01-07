@@ -1,0 +1,29 @@
+.pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-style: solid;
+    border-color: #434C5E;
+    border-radius: 5%;
+    margin: 10px;
+}
+
+.profile {
+    color: #434C5E;
+    flex: 2;
+}
+
+.divider{
+    width: 90%;
+    height: 0;
+    border: 1px;
+    border-style: solid;
+
+}

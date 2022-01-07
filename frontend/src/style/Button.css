@@ -1,0 +1,19 @@
+.button-primary {
+    padding: 8px;
+    border-radius: 10%;
+    background-color: #D8DEE9;
+    color:#3B4252;
+    font-size: 12pt;
+    margin: 5px;
+    min-width: 90px;
+}
+
+.button-secondary {
+    padding: 8px;
+    border-radius: 10%;
+    background-color: #81A1C1;
+    color:#3B4252;
+    font-size: 12pt;
+    margin: 5px;
+    min-width: 90px;
+}

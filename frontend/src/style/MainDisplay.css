@@ -1,0 +1,8 @@
+.mainDisplay {
+    flex: 3;
+    border-style: solid;
+    border-radius: 5%;
+    border-color: #434C5E;
+    margin: 10px;
+    padding: 10px;
+}
