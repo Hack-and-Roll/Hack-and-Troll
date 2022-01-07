@@ -5,7 +5,7 @@ import { supabase } from "./supabaseClient";
 
 function Auth(props) {
   async function signInWithGoogle() {
-    const { user, session, error } = await supabase.auth.signIn({
+    await supabase.auth.signIn({
       provider: "google",
     });
   }
