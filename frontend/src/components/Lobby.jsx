@@ -21,8 +21,8 @@ function Lobby(props) {
       </div>
       <button class="button-primary">Save Your NFT!</button>
       <div>
-        <p style={{ color: "#88C0D0" }}>Description of items and rarities</p>
-        <p style={{ color: "#A3BE8C" }}>Rarity: Super Rare!!</p>
+        <p style={{ color: "#2D4263" }}>Description of items and rarities</p>
+        <p style={{ color: "#C84B31" }}>Rarity: Super Rare!!</p>
       </div>
     </div>
   );

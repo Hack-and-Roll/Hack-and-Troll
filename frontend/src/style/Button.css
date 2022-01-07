@@ -11,8 +11,16 @@
 .button-secondary {
     padding: 8px;
     border-radius: 10%;
-    background-color: #81A1C1;
-    color:#3B4252;
+    background-color: #2D4263;
+    color: white;
+    font-size: 12pt;
+    margin: 5px;
+    min-width: 90px;
+}
+
+.button {
+    padding: 8px;
+    border-radius: 10%;
     font-size: 12pt;
     margin: 5px;
     min-width: 90px;
