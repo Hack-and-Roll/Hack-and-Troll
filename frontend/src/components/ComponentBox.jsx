@@ -1,7 +1,17 @@
 import "../style/ComponentBox.css";
 
-function ComponentBox(props) {
-  return <div class="componentBox"></div>;
+function ComponentBox({ type, status, asset, ...props }) {
+  return (
+    <button {...props} disabled={status === "loading"} className="componentBox">
+      {type}
+      {asset && (
+        <>
+          <br />
+          {asset.name}
+        </>
+      )}
+    </button>
+  );
 }
 
 export default ComponentBox;

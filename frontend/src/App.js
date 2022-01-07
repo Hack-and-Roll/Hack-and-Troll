@@ -7,7 +7,11 @@ import MainDisplay from "./components/MainDisplay";
 import Auth from "./Auth";
 import { useAuth } from "./hooks/useAuth";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { staleTime: 5 * 60 * 1000 },
+  },
+});
 
 function App() {
   const [display, setDisplay] = React.useState("lobby");
