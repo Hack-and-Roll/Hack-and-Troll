@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import "../style/BouncingBalls.css";
 
 function BouncingBalls(props) {
     const canvasRef = useRef(null)
@@ -77,7 +76,7 @@ function BouncingBalls(props) {
             canvas.height = window.innerHeight; // weird value in chrome
             const numDisk = Math.floor((canvas.width + canvas.height) / 2);
 
-            disks = [];
+            disks.length = 0;
             for (var i = 0; i < numDisk; i++) {
                 const r = rand(minDefaultR, maxDefaultR);
                 const x = rand(r, canvas.width - r);
@@ -112,7 +111,7 @@ function BouncingBalls(props) {
             function() {
                 init();
             });
-            
+
         init();
         animate();
     }
@@ -124,7 +123,10 @@ function BouncingBalls(props) {
     draw(canvas, c);
   }, [draw]);
 
-  return <canvas ref={canvasRef} {...props}></canvas>;
+  return <div>
+<canvas ref={canvasRef} style={{"background-color": "#bee5ffAA", "position": "fixed", "top": 0, "left":0}} {...props}></canvas>
+  </div>;
+  
 }
 
 export default BouncingBalls;

@@ -6,7 +6,7 @@ import Auth from "./Auth.jsx";
 
 function App() {
   const [display, setDisplay] = React.useState("lobby");
-  const [isLoggedIn, setLoggedIn] = React.useState(true);
+  const [isLoggedIn, setLoggedIn] = React.useState(false);
 
   return (
     <div>
