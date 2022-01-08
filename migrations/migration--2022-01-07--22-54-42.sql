@@ -213,6 +213,25 @@ as $$
       raise exception 'Unable to find asset.';
     end if;
 
+    if asset_record.background_id is null then
+      raise exception 'Asset has no background';
+    end if;
+    if asset_record.face_id is null then
+      raise exception 'Asset has no face';
+    end if;
+    if asset_record.hat_id is null then
+      raise exception 'Asset has no hat';
+    end if;
+    if asset_record.hands_id is null then
+      raise exception 'Asset has no hands';
+    end if;
+    if asset_record.body_id is null then
+      raise exception 'Asset has no body';
+    end if;
+    if asset_record.pet_id is null then
+      raise exception 'Asset has no pet';
+    end if;
+
     update assets
       set completed = true
       where assets.id = asset_id

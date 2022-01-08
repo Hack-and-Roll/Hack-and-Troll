@@ -36,10 +36,7 @@ function UserProfilePane(props) {
       <h2 class="profile">{data.name}</h2>
       {logout}
       <h3>Coins: {data.money}</h3>
-      {!!assets && assets.length && assets.filter(asset => asset.completed)
-        .map((asset) => {
-          return <div>{asset.id}</div>;
-        })}
+      {!!assets && <h3>Assets: {assets.filter(asset => asset.completed).length}</h3>}
       <div class="divider"></div>
       <MenuColumn display={props.display} setDisplay={props.setDisplay} />
     </div>
