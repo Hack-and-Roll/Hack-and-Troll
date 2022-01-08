@@ -19,19 +19,24 @@ export function useRollRandomComponent() {
   }, {
     onSuccess(data) {
       queryClient.invalidateQueries(["user", user?.id]);
-      queryClient.setQueryData(["assets", user?.id], (current) => {
-        return (current || []).map((asset) => {
-          if (!asset.completed) {
-            return {
-              ...asset,
-              [data.type]: data,
-            };
-          }
+      const queryData = queryClient.getQueryData(["assets", user?.id]);
+      console.log(queryData);
+      if (!queryData || !queryData.length || !queryData.find((asset) => !asset.completed)) {
+        queryClient.invalidateQueries(["assets", user?.id]);
+      } else {
+        queryClient.setQueryData(["assets", user?.id], (current) => {
+          return (current || []).map((asset) => {
+            if (!asset.completed) {
+              return {
+                ...asset,
+                [data.type]: data,
+              };
+            }
 
-          return asset;
+            return asset;
+          });
         });
-      });
-
+      }
     }
   });
 }

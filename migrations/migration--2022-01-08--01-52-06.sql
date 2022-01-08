@@ -29,3 +29,19 @@ insert into public.components (type, name, rarity)
     'Hands ' || i as name,
     0.1 as rarity
   from generate_series(1, 100) as i;
+
+-- Body
+insert into public.components (type, name, rarity)
+  select
+    'body' as type,
+    'Body ' || i as name,
+    0.1 as rarity
+  from generate_series(1, 100) as i;
+
+-- Pet
+insert into public.components (type, name, rarity)
+  select
+    'pet' as type,
+    'Pet ' || i as name,
+    0.1 as rarity
+  from generate_series(1, 100) as i;

@@ -3,11 +3,13 @@ import "../style/Button.css";
 import ComponentBox from "./ComponentBox";
 import AvatarDisplay from "./AvatarDisplay";
 import { useAssets } from "../hooks/useAssets";
+import { useConfirmUserAsset } from "../hooks/useConfirmUserAsset";
 import { useRollRandomComponent } from "../hooks/useRollRandomComponent";
 
 function Lobby(props) {
   const { data: assets } = useAssets();
   const rollRandomComponentMutation = useRollRandomComponent();
+  const confirmUserAssetMutation = useConfirmUserAsset();
 
   const uncompletedAsset =
     !!assets && assets.length && assets.find((asset) => !asset.completed);
@@ -37,6 +39,16 @@ function Lobby(props) {
       (bodyRarity === undefined ? 0 : bodyRarity) *
       (petRarity === undefined ? 0 : petRarity)
     );
+  };
+
+  const onConfirmAsset = () => {
+    confirmUserAssetMutation
+      .mutateAsync(uncompletedAsset?.id)
+      .catch((error) => {
+        if (error?.message) {
+          window.alert(error.message);
+        }
+      });
   };
 
   return (
@@ -84,7 +96,15 @@ function Lobby(props) {
           />
         </div>
       </div>
-      <button class="button-primary">Save Your NFT!</button>
+      <button
+        className="button-primary"
+        onClick={onConfirmAsset}
+        disabled={
+          !uncompletedAsset || confirmUserAssetMutation.status === "loading"
+        }
+      >
+        Save Your NFT!
+      </button>
       <div style={{ textAlign: "left" }}>
         <p style={{ color: "#2D4263" }}></p>
         <ul style={{ color: "#2D4263" }}>
