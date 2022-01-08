@@ -35,7 +35,7 @@ function drawPet(c, key, colour) {
 function drawComponents(c, asset) {
   drawBackground(c, asset?.background?.name || "empty", null);
   drawBody(c, asset?.body?.name || "empty", '#F0EEAA');
-  drawArms(c, asset?.arm?.name || "empty", "purple");
+  drawArms(c, asset?.hands?.name || "empty", "purple");
   drawFace(c, asset?.face?.name || "empty", '#593a00');
   drawHat(c, asset?.hat?.name || "empty", null);
   drawPet(c, asset?.pet?.name || "empty", '#b700ff');

@@ -26,11 +26,44 @@ function cap(c, colour) {
     c.stroke();
 }
 
+
+function tap(c, colour) {
+    c.fillStyle = colour;
+    c.fillRect(70, 120, 250,10);
+    c.fillRect(80, 110, 200,10);
+    c.fillRect(80, 100, 160,10);
+    c.fillRect(80, 90, 160,10);
+    c.fillRect(80, 80, 160,10);
+    c.fillRect(80, 70, 160,10);
+}
+
+function pap(c, colour) {
+    c.fillStyle = colour;
+    c.fillRect(50, 120, 250,10);
+    c.fillRect(60, 110, 190,10);
+    c.fillRect(100, 100, 100,10);
+    c.fillRect(100, 90, 100,10);
+    c.fillRect(100, 80, 100,10);
+    c.fillRect(100, 70, 100,10);
+    c.fillRect(100, 60, 100,10);
+    c.fillRect(100, 50, 100,10);
+}
+
+function jap(c, colour) {
+    c.fillStyle = colour;
+    c.fillRect(50, 120, 250,10);
+    c.fillRect(60, 110, 190,10);
+    c.fillRect(100, 100, 100,10);
+}
+
 function drawEmpty(c, colour) {}
 
 var hats = {
     halo: halo,
     cap: cap,
+    tap: tap,
+    pap: pap,
+    jap: jap,
     empty: drawEmpty
 }
 

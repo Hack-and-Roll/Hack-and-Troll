@@ -57,54 +57,54 @@ function drawCloud(c, colour) {
     c.fillStyle = '#9999FF';
     c.fillRect(0, 0, 400, 400);
 
-    cloud(320, 100);
-    cloud(210, 60);
-    cloud(60, 110);
-    cloud(50, 290);
-    cloud(270, 180);
-    cloud(0, 190);
-    cloud(360, 280);
-    cloud(230, 300);
+    cloud(c,320, 100);
+    cloud(c,210, 60);
+    cloud(c,60, 110);
+    cloud(c,50, 290);
+    cloud(c,270, 180);
+    cloud(c,0, 190);
+    cloud(c,360, 280);
+    cloud(c,230, 300);
     
 }
 
 function drawForest(c, colour) {
-    drawCloud(colour);
+    drawCloud(c, colour);
     
     c.fillStyle = 'green';
     c.fillRect(0, 360, 400, 60);
 
-    tree(380, 360);
-    tree(300, 380);
-    tree(260, 360);
-    tree(200, 368);
-    tree(340, 384);
-    tree(0, 370);
-    tree(60, 380);
+    tree(c, 380, 360);
+    tree(c, 300, 380);
+    tree(c, 260, 360);
+    tree(c, 200, 368);
+    tree(c, 340, 384);
+    tree(c, 0, 370);
+    tree(c, 60, 380);
 }
 
 function drawSpace(c, colour) {
     c.fillStyle = '#301940';
     c.fillRect(0, 0, 400, 400);
 
-    star(300, 100);
-    star(60, 40);
-    star(15, 90);
-    star(50, 160);
-    star(30, 210);
-    star(20, 280);
-    star(90, 100);
-    star(120, 140);
-    star(130, 70);
-    star(180, 50);
-    star(250, 20);
-    star(320, 50);
-    star(270, 160);
-    star(340, 180);
-    star(370, 220);
-    star(370, 90);
-    star(320, 290);
-    star(270, 250);
+    star(c, 300, 100);
+    star(c, 60, 40);
+    star(c, 15, 90);
+    star(c, 50, 160);
+    star(c, 30, 210);
+    star(c, 20, 280);
+    star(c, 90, 100);
+    star(c, 120, 140);
+    star(c, 130, 70);
+    star(c, 180, 50);
+    star(c, 250, 20);
+    star(c, 320, 50);
+    star(c, 270, 160);
+    star(c, 340, 180);
+    star(c, 370, 220);
+    star(c, 370, 90);
+    star(c, 320, 290);
+    star(c, 270, 250);
 }
 
 function drawEmpty(c, colour) {

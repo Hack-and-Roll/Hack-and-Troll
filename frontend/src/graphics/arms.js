@@ -52,13 +52,22 @@ function drawRobot(c, colour) {
     c.stroke();
 }
 
-function drawArmless(c, colour) {}
+function drawArmless(c, colour) {
+    c.fillStyle = '#FFFFFF66';
+    c.fillRect(20, 220, 80, 100);
+    c.fillRect(220, 220, 80, 100);
+}
+
+function drawEmpty(c, colour) {
+    
+}
 
 
 var arms = {
     normal: drawNormal,
     robot: drawRobot,
-    empty: drawArmless,
+    armless: drawArmless,
+    empty: drawEmpty,
 }
 
 export {arms as default};
