@@ -1,4 +1,5 @@
 import "../style/UserProfilePane.css";
+import "../style/Button.css";
 import MenuColumn from "./MenuColumn";
 import { useAssets } from "../hooks/useAssets";
 import { useUser } from "../hooks/useUser";
@@ -11,7 +12,11 @@ function UserProfilePane(props) {
   const handleLogOut = () => {
     supabase.auth.signOut();
   };
-  const logout = <button onClick={handleLogOut}>Logout</button>;
+  const logout = (
+    <button class="button-primary" onClick={handleLogOut}>
+      Logout
+    </button>
+  );
 
   if (status === "loading" || status === "idle") {
     return (
@@ -34,11 +39,13 @@ function UserProfilePane(props) {
   return (
     <div class="pane">
       <h2 class="profile">{data.name}</h2>
-      {logout}
-      <h3>Coins: {data.money}</h3>
-      {!!assets && <h3>Assets: {assets.filter(asset => asset.completed).length}</h3>}
-      <div class="divider"></div>
       <MenuColumn display={props.display} setDisplay={props.setDisplay} />
+      {logout}
+      <div class="divider"></div>
+      <h3>Coins: {data.money}</h3>
+      {!!assets && (
+        <h3>Assets: {assets.filter((asset) => asset.completed).length}</h3>
+      )}
     </div>
   );
 }
