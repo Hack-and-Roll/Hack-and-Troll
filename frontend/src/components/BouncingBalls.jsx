@@ -121,10 +121,10 @@ function BouncingBalls(props) {
   const canvasRef = useRef(null)
 
   useEffect(() => {
-  const canvas = canvasRef.current;
-  const c = canvas.getContext("2d");
+    const canvas = canvasRef.current;
+    const c = canvas.getContext("2d");
 
-  return draw(canvas, c);
+    return draw(canvas, c);
   }, []);
 
   return (
