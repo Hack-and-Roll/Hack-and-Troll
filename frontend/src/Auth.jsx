@@ -7,6 +7,8 @@ function Auth(props) {
   async function signInWithGoogle() {
     await supabase.auth.signIn({
       provider: "google",
+    }, {
+      redirectTo: typeof window !== "undefined" && `${window.location.protocol}//${window.location.host}`
     });
   }
 
