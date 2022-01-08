@@ -12,3 +12,12 @@
     justify-content: space-around;
     align-content: center;
 }
+
+.name {
+    font-weight: bold;
+}
+
+.rarity {
+    color: #C84B31;
+    font-weight: bold;
+}
