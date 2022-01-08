@@ -2,6 +2,7 @@ import "../style/Lobby.css";
 import "../style/Button.css";
 import ComponentBox from "./ComponentBox";
 import AvatarDisplay from "./AvatarDisplay";
+import AssetDescription from "./AssetDescription";
 import { useAssets } from "../hooks/useAssets";
 import { useConfirmUserAsset } from "../hooks/useConfirmUserAsset";
 import { useRollRandomComponent } from "../hooks/useRollRandomComponent";
@@ -22,23 +23,6 @@ function Lobby(props) {
         }
       });
     };
-  };
-
-  const getRarity = () => {
-    const bgRarity = uncompletedAsset?.background?.rarity;
-    const faceRarity = uncompletedAsset?.face?.rarity;
-    const hatRarity = uncompletedAsset?.hat?.rarity;
-    const handsRarity = uncompletedAsset?.hands?.rarity;
-    const bodyRarity = uncompletedAsset?.body?.rarity;
-    const petRarity = uncompletedAsset?.pet?.rarity;
-    return (
-      (bgRarity === undefined ? 0 : bgRarity) *
-      (faceRarity === undefined ? 0 : faceRarity) *
-      (hatRarity === undefined ? 0 : hatRarity) *
-      (handsRarity === undefined ? 0 : handsRarity) *
-      (bodyRarity === undefined ? 0 : bodyRarity) *
-      (petRarity === undefined ? 0 : petRarity)
-    );
   };
 
   const onConfirmAsset = () => {
@@ -105,43 +89,7 @@ function Lobby(props) {
       >
         Save Your NFT!
       </button>
-      <div style={{ textAlign: "left" }}>
-        <p style={{ color: "#2D4263" }}></p>
-        <ul style={{ color: "#2D4263" }}>
-          <li>
-            <span class="name">Background:</span>{" "}
-            {uncompletedAsset?.background?.name},
-            <span class="rarity">Rarity: </span>
-            {uncompletedAsset?.background?.rarity}
-          </li>
-          <li>
-            <span class="name">Face:</span> {uncompletedAsset?.face?.name},{" "}
-            <span class="rarity">Rarity: </span>
-            {uncompletedAsset?.face?.rarity}
-          </li>
-          <li>
-            <span class="name">Hat:</span> {uncompletedAsset?.hat?.name},{" "}
-            <span class="rarity">Rarity: </span>
-            {uncompletedAsset?.hat?.rarity}
-          </li>
-          <li>
-            <span class="name">Hands:</span> {uncompletedAsset?.hands?.name},{" "}
-            <span class="rarity">Rarity: </span>
-            {uncompletedAsset?.hands?.rarity}
-          </li>
-          <li>
-            <span class="name">Body:</span> {uncompletedAsset?.body?.name},{" "}
-            <span class="rarity">Rarity: </span>
-            {uncompletedAsset?.body?.rarity}
-          </li>
-          <li>
-            <span class="name">Pet:</span> {uncompletedAsset?.pet?.name},{" "}
-            <span class="rarity">Rarity: </span>
-            {uncompletedAsset?.pet?.rarity}
-          </li>
-        </ul>
-        <p style={{ color: "#C84B31" }}>Rarity: {getRarity()}</p>
-      </div>
+      <AssetDescription asset={uncompletedAsset} />
     </div>
   );
 }

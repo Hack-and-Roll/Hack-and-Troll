@@ -1,4 +1,5 @@
 import "../style/UserProfilePane.css";
+import "../style/Button.css";
 import MenuColumn from "./MenuColumn";
 import { useAssets } from "../hooks/useAssets";
 import { useUser } from "../hooks/useUser";
@@ -33,12 +34,16 @@ function UserProfilePane(props) {
 
   return (
     <div class="pane">
-      <h2 class="profile">{data.name}</h2>
-      {logout}
-      <h3>Coins: {data.money}</h3>
-      {!!assets && <h3>Assets: {assets.filter(asset => asset.completed).length}</h3>}
-      <div class="divider"></div>
+      <div class="profile">
+        <h2 class="profile-name">{data.name}</h2>
+        {logout}
+      </div>
       <MenuColumn display={props.display} setDisplay={props.setDisplay} />
+      <div class="divider"></div>
+      <h3>Coins: {data.money}</h3>
+      {!!assets && (
+        <h3>Assets: {assets.filter((asset) => asset.completed).length}</h3>
+      )}
     </div>
   );
 }
