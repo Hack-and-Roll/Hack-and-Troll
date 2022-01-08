@@ -12,11 +12,7 @@ function UserProfilePane(props) {
   const handleLogOut = () => {
     supabase.auth.signOut();
   };
-  const logout = (
-    <button class="button-primary" onClick={handleLogOut}>
-      Logout
-    </button>
-  );
+  const logout = <button onClick={handleLogOut}>Logout</button>;
 
   if (status === "loading" || status === "idle") {
     return (
@@ -38,9 +34,11 @@ function UserProfilePane(props) {
 
   return (
     <div class="pane">
-      <h2 class="profile">{data.name}</h2>
+      <div class="profile">
+        <h2 class="profile-name">{data.name}</h2>
+        {logout}
+      </div>
       <MenuColumn display={props.display} setDisplay={props.setDisplay} />
-      {logout}
       <div class="divider"></div>
       <h3>Coins: {data.money}</h3>
       {!!assets && (
